@@ -20,7 +20,7 @@
       fileContentArea.textContent = "Please select a file.";
     }
   //} \\
-  document.body.appendChild(inputElement);
+  document.body.appendChild(fileContentArea);
 
 const fs = require('fs');
 const readline = require('readline');
@@ -42,7 +42,7 @@ async function processLineByLine(filePath) {
 }
 
 
-const filePath = fileInput;
+const filePath = fileContentArea;
 processLineByLine(filePath).catch(err => {
     console.error(`Error processing file: ${err}`);
 });
