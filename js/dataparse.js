@@ -4,23 +4,36 @@
 
     fileInput.addEventListener('change', (event) => {
       const file = event.target.files[0];
+      if (file) {
       const reader = new FileReader();
 
       reader.onload = (event) => {
         const text = event.target.result;
-        parseTextToDOM(text);
+        parseText(text);
+      };
+      reader.onerror = (event) => {
+        console.error ("Error reading file:",event);
       };
       reader.readAsText(file);
+    }
     });
 
-    function parseTextToDOM(text) {
+
+
+    function parseText(text) {
       const lines = text.split('\n');
-      const dom = document.implementation.createHTMLDocument();
-      const body = dom.body;
+
+   /*   const dom = document.implementation.createHTMLDocument();
+      const body = dom.body; */
     
       lines.forEach(line => {
-        const parts = line.split(': '); // Example: splitting by a delimiter
-        if (parts.length === 2) {
+        const values = line.split(': '); // Example: splitting by a delimiter
+        console.log(values);
+      });
+    }
+  
+  
+  /*      if (parts.length === 2) {
           const key = parts[0];
           const value = parts[1];
     
@@ -30,7 +43,7 @@
         }
       });
       console.log(dom);
-    }
+    } */
 
 
 
