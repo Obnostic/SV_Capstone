@@ -1,23 +1,56 @@
 // function readFile() { \\
     const fileInput = document.getElementById('fileInput');
     const fileContentArea = document.getElementById('fileContent');
-  
-    const file = fileInput.files[0];
+
+    fileInput.addEventListener('change', (event) => {
+      const file = event.target.files[0];
+      const reader = new FileReader();
+
+      reader.onload = (event) => {
+        const text = event.target.result;
+        parseTextToDOM(text);
+      };
+      reader.readAsText(file);
+    });
+
+    function parseTextToDOM(text) {
+      const lines = text.split('\n');
+      const dom = document.implementation.createHTMLDocument();
+      const body = dom.body;
+    
+      lines.forEach(line => {
+        const parts = line.split(': '); // Example: splitting by a delimiter
+        if (parts.length === 2) {
+          const key = parts[0];
+          const value = parts[1];
+    
+          const element = dom.createElement('div');
+          element.textContent = `${key}: ${value}`;
+          body.appendChild(element);
+        }
+      });
+      console.log(dom);
+    }
+
+
+
+    
+ /*   const file = fileInput.files[0];
   
     if (file) {
-      const reader = new FileReader();
+      const reader = new FileReader(); 
   
       reader.onload = function(event) {
         fileContentArea.textContent = event.target.result;
       };
-  
+
       reader.onerror = function(event) {
         fileContentArea.textContent = "Error reading file.";
       };
   
       reader.readAsText(file);
     } else {
-      fileContentArea.textContent = "Please select a file.";
+      fileContentArea.textContent = "Please select a file."; 
     }
   //} \\
   document.body.appendChild(fileContentArea);
@@ -45,4 +78,4 @@ async function processLineByLine(filePath) {
 const filePath = fileContentArea;
 processLineByLine(filePath).catch(err => {
     console.error(`Error processing file: ${err}`);
-});
+}); */
