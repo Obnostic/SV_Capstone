@@ -7,7 +7,7 @@ const fileContent = document.getElementById('fileContent');
 
 // fileContent.addEventListener ('click', function(event) { //
 
-fileInput.addEventListener('click', function(event) {
+fileInput.addEventListener('change', function(event) {
   const file = event.target.files[0]; // Get the file selected by user in the html
   if (file) {
     const reader = new FileReader();
