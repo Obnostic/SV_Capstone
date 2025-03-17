@@ -1,30 +1,46 @@
 
-// Get the file input element
+// Capstone Data Parser
+// Read a text file of Sharp MFP Statistics Reports
+// Parse to gather selected data and create and Excel file
+
+
 const fileInput = document.getElementById('fileInput');
 const fileContent = document.getElementById('fileContent');
 
 
 
-// fileContent.addEventListener ('click', function(event) { //
+function endUserVerify () {
+  fileContent.addEventListener ('click', function(event) { 
+     // proceed after acknowledging end record delimiter "-----"
+
+  });  // End Onclick Permission to Process
+
+
+}  // End function endUserVerify
+
+ // Get the file selected by user in the html
 
 fileInput.addEventListener('change', function(event) {
-  const file = event.target.files[0]; // Get the file selected by user in the html
+  const file = event.target.files[0];
   if (file) {
     const reader = new FileReader();
 
+
 // hold for approval by user:  Read file
+
+fileContent.addEventListener ('click', function(event) { 
+
+  // Get the file content as a string
     reader.onload = function(e) {
-
-      const fileContent = e.target.result; // Get the file content as a string
-      
-
+    const fileContent = e.target.result; 
+   
 
   // Split the content into lines (by newline characters)
-      const lines = fileContent.split('\n');
+    const lines = fileContent.split('\n');
   
   // Output each line to the console
-      lines.forEach((line, index) => {
-         if (line.length > 1)  {
+    lines.forEach((line, index) => {
+      if (line.length > 1)  {
             // here's where we start pulling only the data we need.
             //   I will overwrite and mindlessly repeat the same code, then consolidate
             // search the text for the following data:
@@ -47,8 +63,11 @@ fileInput.addEventListener('change', function(event) {
             // Otherwise don't mention toner amounts at all
             // The oblect is to display the valid information in the browser, and wait for the end user to push a button to confirm.
             // Then we will use a SQL API to feed the information into a spreadsheet
+            // Finally, reading the delimiter "-----" should pause processing
+            // ... and allow the enduser to review and approve to continue.
 
-            console.log(`Line ${index + 1}: ${line}`); 
+
+      console.log(`Line ${index + 1}: ${line}`); 
           
           
           
@@ -64,8 +83,12 @@ fileInput.addEventListener('change', function(event) {
 
   // Read the file as text
   reader.readAsText(file);
+  
+  });     // End of Read File On Click
+
+
     } else {
   console.log("No file selected.");
   }
-});
+}); // End of Get File On Click
 
