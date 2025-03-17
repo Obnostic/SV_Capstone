@@ -6,14 +6,13 @@
 
 const fileInput = document.getElementById('fileInput');
 const fileContent = document.getElementById('fileContent');
-const textLineOutput = document.getElementById("text-line-output");
+
 
 
 function endUserVerify () {
-  
-  fileContent.addEventListener ('change', function(event) { 
+  fileContent.addEventListener ('click', function(event) { 
      // proceed after acknowledging end record delimiter "-----"
-    // event.target.disabled = false;
+
   });  // End Onclick Permission to Process
 
 
@@ -46,19 +45,14 @@ fileContent.addEventListener ('click', function(event) {
             //   I will overwrite and mindlessly repeat the same code, then consolidate
             // search the text for the following data:
             // Date in the format YYYY/MM/DD
-            let date = line.startsWith("2025");
             // Device Name:
             // Device Model:  Parse to determine if this is a Monochrome or Color Machine
-            let model = line.startsWith("Device");
             // Both Device Name and Model MAY or MAY NOT be on the same line
             // Serial Number: Remove the 2 zeroes padding the end, Sharp MFPs only use an 8 digit S/N
-            let serial = line.startsWith("Serial");
             // Black & White Total Print Count:  Followed by a ' = ' and a number from 2 to 7 digits
-            let mono = line.startsWith("Black & White Total Print Count");
             // IF the MFP is a color machine them
             // Color Total Print Count:  same syntax as above
             // ** the two Total Print Counts MAY or MAY NOT be on the same line
-            let color = line.startsWith("Color Total Print Count");
             // Finally , Low Toner Alert:
             // For monochrome, it's Toner Residual (Bk)
             // For Color, it's Toner Residual each of C,M,Y
@@ -67,22 +61,18 @@ fileContent.addEventListener ('click', function(event) {
             // if the RANGE is 0%-25%, alert the end user to have a backup ready
             // if the Percentage is 10% or less, tell the enduser that their toner is ALMOST OUT
             // Otherwise don't mention toner amounts at all
-            let tonerQuan = line.startsWith("Toner Residual");
             // The oblect is to display the valid information in the browser, and wait for the end user to push a button to confirm.
             // Then we will use a SQL API to feed the information into a spreadsheet
             // Finally, reading the delimiter "-----" should pause processing
             // ... and allow the enduser to review and approve to continue.
-            let endRecordFlag = line.startsWith("-----");
 
-            if (date || model || serial || mono || color || tonerQuan || endRecordFlag)
-            {  console.log(`Line ${index + 1}: ${line}`); 
-                textLineOutput.innerText = line;  //  - Displays the final line only
-//        document.getElementById('textLineOutput').innerHTML = line;   
-              };
-            if (endRecordFlag) {
-              console.log(`End of record: ${line}`);
-              endUserVerify(); }
-          }
+
+      console.log(`Line ${index + 1}: ${line}`); 
+          
+          
+          
+          
+          };
       });
 
 
