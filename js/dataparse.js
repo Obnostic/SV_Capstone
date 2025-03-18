@@ -2,11 +2,35 @@
 // Capstone Data Parser
 // Read a text file of Sharp MFP Statistics Reports
 // Parse to gather selected data and create and Excel file
+// ExcelJS is the API
 
 
 const fileInput = document.getElementById('fileInput');
 const fileContent = document.getElementById('fileContent');
 const textLineOutput = document.getElementById("text-line-output");
+
+let modelResult="";
+let serResult=0;
+let colorResult=0;
+
+//const fs = require('fs');
+//const outPutObject = {
+//  dateObj: dateLine,
+//  nameObj: custField,
+ // modelObj: modelResult,
+//  serObj: serResult,
+//  monoCt: monoResult,
+  // colorMFP: { if (colorFlag) {"Y"} else {"N"}},
+//  colorCt: colorResult
+//  tonerRemain: {
+ //   if (!colorflag) {"B"+standby} else {
+ //       "C"+Ccritical+"   M"+Mcritical+"    Y"+critical
+ //   }
+ // }
+// };
+
+//const stringForJSON = JSON.stringify(outPutObject,null);
+//fs.writeFileSync('mydata.json', myJSONString);
 
 
 
@@ -19,11 +43,11 @@ function endUserVerify() {
 }  // End function endUserVerify
 
 
-function parseModel(txt,cFlag) {}
-function trimSerial(txt) {}
-function colorTally(txt,cFlag) {}
-function monoTally(txt,cFlag) {}
-function lowTonerAlert(txt,whichTC,cFlag) {}
+function parseModel(txt,cFlag,modelResult) {}
+//function trimSerial(txt,serResult) {}
+function colorTally(txt,cFlag,colorResult) {}
+function monoTally(txt,cFlag,monoResult) {}
+function lowTonerAlert(txt,whichTC,cFlag,quanResult) {}
 
 
 
@@ -87,17 +111,19 @@ fileContent.addEventListener ('click', function(event) {
             let endRecordFlag = line.startsWith("-----");
 
             if (date || custName || model || serial || mono || color || tonerQuan || endRecordFlag)
-            { if (model) {parseModel(line, colorFlag);}
-              if (serial) {trimSerial(line);}
-              if (mono) {monoTally(line,colorFlag);}
-              if (color) {colorTally(line,colorFlag);}
-              if (tonerQuan) {lowTonerAlert(line,tcIndicator,colorFlag);}
+            { if (model) {parseModel(line, colorFlag,modelResult);}
+              //if (serial) {trimSerial(line,serResult);}
+              //if (mono) {monoTally(line,colorFlag,monoResult);}
+              //if (color) {colorTally(line,colorFlag,colorResult);}
+              //if (tonerQuan) {lowTonerAlert(line,tcIndicator,colorFlag,quanResult);}
               
               
               console.log(`Line ${index + 1}: ${line}`); 
                document.addEventListener("DOMContentLoaded", (event) => {
-                document.getElementById("textLineOutput").innerHTML = "line"; }); //no output to browser?
+                document.getElementById("textLineOutput").innerHTML = line; }); //no output to browser?
               }
+
+              
 
 
             if (endRecordFlag) {
