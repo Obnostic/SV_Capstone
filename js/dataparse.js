@@ -9,15 +9,23 @@ const fileContent = document.getElementById('fileContent');
 const textLineOutput = document.getElementById("text-line-output");
 
 
-function endUserVerify () {
+
+function endUserVerify() {
   
   fileContent.addEventListener ('change', function(event) { 
      // proceed after acknowledging end record delimiter "-----"
     // event.target.disabled = false;
   });  // End Onclick Permission to Process
-
-
 }  // End function endUserVerify
+
+
+function parseModel(txt,cFlag) {}
+function trimSerial(txt) {}
+function colorTally(txt,cFlag) {}
+function monoTally(txt,cFlag) {}
+function lowTonerAlert(txt,whichTC,cFlag) {}
+
+
 
  // Get the file selected by user in the html
 
@@ -38,9 +46,12 @@ fileContent.addEventListener ('click', function(event) {
 
   // Split the content into lines (by newline characters)
     const lines = fileContent.split('\n');
-  
-  // Output each line to the console
+    let colorFlag = false;
+    let tcIndicator = "";   
+    
+    // Output each line to the console
     lines.forEach((line, index) => {
+      
       if (line.length > 1)  {
             // here's where we start pulling only the data we need.
             //   I will overwrite and mindlessly repeat the same code, then consolidate
@@ -49,7 +60,8 @@ fileContent.addEventListener ('click', function(event) {
             let date = line.startsWith("2025");
             // Device Name:
             // Device Model:  Parse to determine if this is a Monochrome or Color Machine
-            let model = line.startsWith("Device");
+            let custName = line.startsWith("Device Name");
+            let model = line.startsWith("Device Model");
             // Both Device Name and Model MAY or MAY NOT be on the same line
             // Serial Number: Remove the 2 zeroes padding the end, Sharp MFPs only use an 8 digit S/N
             let serial = line.startsWith("Serial");
@@ -74,13 +86,23 @@ fileContent.addEventListener ('click', function(event) {
             // ... and allow the enduser to review and approve to continue.
             let endRecordFlag = line.startsWith("-----");
 
-            if (date || model || serial || mono || color || tonerQuan || endRecordFlag)
-            {  console.log(`Line ${index + 1}: ${line}`); 
-                textLineOutput.innerText = line;  //  - Displays the final line only
-//        document.getElementById('textLineOutput').innerHTML = line;   
-              };
+            if (date || custName || model || serial || mono || color || tonerQuan || endRecordFlag)
+            { if (model) {parseModel(line, colorFlag);}
+              if (serial) {trimSerial(line);}
+              if (mono) {monoTally(line,colorFlag);}
+              if (color) {colorTally(line,colorFlag);}
+              if (tonerQuan) {lowTonerAlert(line,tcIndicator,colorFlag);}
+              
+              
+              console.log(`Line ${index + 1}: ${line}`); 
+               document.addEventListener("DOMContentLoaded", (event) => {
+                document.getElementById("textLineOutput").innerHTML = "line"; }); //no output to browser?
+              }
+
+
             if (endRecordFlag) {
-              console.log(`End of record: ${line}`);
+              console.log(`End of record. Click Read File to process next record.`);
+              colorFlag = false;
               endUserVerify(); }
           }
       });
