@@ -8,6 +8,12 @@
 const fileInput = document.getElementById('fileInput');
 const fileContent = document.getElementById('fileContent');
 const textLineOutput = document.getElementById("text-line-output");
+const readout = textLineOutput.elements["read-out"];
+
+
+function updateResult() {
+  readout.value = data;
+}
 
 let modelResult="";
 let serResult=0;
@@ -43,11 +49,11 @@ function endUserVerify() {
 }  // End function endUserVerify
 
 
-function parseModel(txt,cFlag,modelResult) {}
+//function parseModel(txt,cFlag,modelResult) {}
 //function trimSerial(txt,serResult) {}
-function colorTally(txt,cFlag,colorResult) {}
-function monoTally(txt,cFlag,monoResult) {}
-function lowTonerAlert(txt,whichTC,cFlag,quanResult) {}
+//function colorTally(txt,cFlag,colorResult) {}
+//function monoTally(txt,cFlag,monoResult) {}
+//function lowTonerAlert(txt,whichTC,cFlag,quanResult) {}
 
 
 
@@ -111,7 +117,7 @@ fileContent.addEventListener ('click', function(event) {
             let endRecordFlag = line.startsWith("-----");
 
             if (date || custName || model || serial || mono || color || tonerQuan || endRecordFlag)
-            { if (model) {parseModel(line, colorFlag,modelResult);}
+            { //if (model) {parseModel(line, colorFlag,modelResult);}
               //if (serial) {trimSerial(line,serResult);}
               //if (mono) {monoTally(line,colorFlag,monoResult);}
               //if (color) {colorTally(line,colorFlag,colorResult);}
@@ -119,8 +125,10 @@ fileContent.addEventListener ('click', function(event) {
               
               
               console.log(`Line ${index + 1}: ${line}`); 
-               document.addEventListener("DOMContentLoaded", (event) => {
-                document.getElementById("textLineOutput").innerHTML = line; }); //no output to browser?
+              updateResult();
+            } //end if combo
+      } //end skip blank lines
+    }); //end of processing each line
               }
 
               
@@ -130,23 +138,14 @@ fileContent.addEventListener ('click', function(event) {
               console.log(`End of record. Click Read File to process next record.`);
               colorFlag = false;
               endUserVerify(); }
+
+         // Read the file as text
+          reader.readAsText(file);
+          }); // end of wait for click on Read File before proceeding
+        } else {
+          console.log("No file selected.");
           }
-      });
-
-
-    };
-
-
-
-
-  // Read the file as text
-  reader.readAsText(file);
-  
-  });     // End of Read File On Click
-
-
-    } else {
-  console.log("No file selected.");
-  }
-}); // End of Get File On Click
+      }  // end of test if file exists or not
+    
+    ); // end of go get the file
 
