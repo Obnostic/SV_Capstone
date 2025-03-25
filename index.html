@@ -3,16 +3,27 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!--    <link rel="stylesheet" href="./css/style.css" /> -->
+        <link rel="stylesheet" href="../SV_Capstone/css/style.css">
         <title>Capstone:  Text Parser</title>
     </head>
 
 <body>
-<input type="file" id="fileInput">
+<input type="file" id="file-input">
 
-<button id="fileContent" onclick="fileContent">Read File</button>
+<button id="file-content">Read File</button>
  
-<p class="text" id="text-line-output"></p><br>
+ <!--   <form id="text-line-output">
+        <output name="read-out"></output>
+</form>    -->
+
+<!-- div id="text-line-output"></div  -->
+
+<br><br>
+<div id="">
+    <p class="text">Report Date/Time:&nbsp;<span id="date-n-time"></span></p>
+    <p class="text">Monochrome Total:&nbsp;<span id="b+w-total"></span></p>
+    <p class="text">Color Total:&nbsp;<span id="col-total"></span></p>
+</div>        
 
 
 

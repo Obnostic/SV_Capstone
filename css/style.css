@@ -1,0 +1,44 @@
+
+ *{
+        padding: 10;
+        margin: 10;
+        box-sizing: border-box;
+} 
+
+.text-container { 
+    display: flex;
+    justify-content: left;  
+    align-items: top;
+    height:fit-content;
+    word-wrap: break-word;
+word-break: break-all;
+} 
+
+
+.output-text {
+    display: flex;
+    flex-direction: row;
+    margin: 1rem 0;
+    width: 90%;
+}
+
+
+p {
+    font-size: 1.5rem;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.js {
+
+     color:black;
+}
+
+.typed-text {
+    color: darkslategray; 
+}
+
+.cursor {
+    background: #160077bd;
+}
+
