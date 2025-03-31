@@ -99,8 +99,8 @@ fileInput.addEventListener('change', function(event) {  // Get the file selected
   
       
       line = line.trim();         // remove spaces at both ends
- //   output to browser
-      dateTime.textContent = (`Line ${index}: ${line}`);     // Workin' Awesome
+
+       
       
 
      if (line.length > 1 )  { //remove checking out or processing blank lines
@@ -110,7 +110,6 @@ fileInput.addEventListener('change', function(event) {  // Get the file selected
  // THIS IS THE BIG OUTPUT AREA.  **CAN* WE GET OUTPUT PAST THIS JS??!   
  
       console.log(`${workString}`);  /// working, shows the line without the index number
-      console.log(`${line.length} , ${workString.length}`); ///working, equal length
 //       some kind of DOM output to the html goes here
 
 
@@ -129,6 +128,7 @@ fileInput.addEventListener('change', function(event) {  // Get the file selected
           endRecordFlag = true;
           console.log(`Record end reached?  ${endRecordFlag}`);
           console.log("End Record Delimiter Received");
+//            here is the actual parsing nitty grittty
         } else {
           if (workString.startsWith(tempString)) {
             switch (i) {
@@ -136,6 +136,7 @@ fileInput.addEventListener('change', function(event) {  // Get the file selected
                 dateTime.textContent = workString;
          // output dateTime to JSON
                 break;
+
               case 1:            
                 startPos = 13;
                 endPos = workString.length;
@@ -156,8 +157,8 @@ fileInput.addEventListener('change', function(event) {  // Get the file selected
 // Cust name, Output model and MFP type to json                 
                 }   // End of  checking if the Device Name line has a Model Number
               break; // End Case 1
-              case 2:
-        // if the device model is at the beginning of the line  
+
+              case 2:          // if the device model is at the beginning of the line  
                startPos = 14;
                endPos = workString.length;
                modTxt = workString.slice(startPos, endPos);
@@ -169,13 +170,23 @@ fileInput.addEventListener('change', function(event) {  // Get the file selected
                if ((modTxt.startsWith("BP")) && (modTxt.charAt(5)=="M")) {
                 MFPtype.textContent="Monochrome";}
                 break; // End Case 2
+
+              case 3: // Remove the padded 0's from the end of the S/N
+               serNo.textContent = workString.slice(14, -2);
+               break;  // End Case 3        
+        
+              case 4:  // B&W Total - Col Total may be on same line
+
+               break; // End Case 4
+
+
               default:
                 console.log(`Function for ${keyPhrase[i]} not yet implemented.`);
+            } //end switch case
 
-              } //end switch case
-      } //end if (workString.startsWith(tempString))
-     } //end else
-     } // end for loop
+          } //end if checking if the workString startsWith the tempString from the array
+        } //end of the 'else' that signified the end delimiter has not been reached
+      } // end of parsing the line to compare with array elements
     
 
 //  END OF TEXT PROCESSING AND CONVERSION 
@@ -186,7 +197,7 @@ fileInput.addEventListener('change', function(event) {  // Get the file selected
 
 
     if (endRecordFlag) {
-      fileContent.removeEventListener('click', arguments.callee);
+//      fileContent.removeEventListener('click', arguments.callee);
       
       console.log("Click Read File to continue");
       fileContent.addEventListener ('click', endUserVerify, false );
