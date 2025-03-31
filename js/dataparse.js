@@ -121,12 +121,69 @@ fileInput.addEventListener('change', function(event) {  // Get the file selected
           let tempString = keyPhrase[i];  // pass the string array value to a temp var - protect the array
           console.log(`Array selection: ${tempString}`);
           console.log(`WorkPhrase: ${workString}`);
-     //
-     // 
-     // 
-     // 
-          if (line.includes("-----"))     {endRecordFlag = true;}
-          console.log(`Record end reached?  ${endRecordFlag}`);
+
+          // check for end of record first
+          if (line.includes("-----"))  {
+            endRecordFlag = true;
+            console.log(`Record end reached?  ${endRecordFlag}`);
+            console.log("End Record Delimiter Received");
+          } else {
+          if (workString.startsWith(tempString)) {
+            switch (i) {
+              case (i=0):
+                dateTime.textContent = workString;
+                // output dateTime to JSON
+                break;
+              case (i=1):            
+                startPos = 13;
+                endPos = workString.length;
+                let custText = workString.slice(startPos, endPos); 
+                custName.textContent = custText;
+                if (workString.indexOf(keyPhrase[2])>0) {    // Processing the model number
+                  console.log("Model number is present on the same line as the customer's ID");
+                  startPos = (workString.indexOf(keyPhrase[2])+14);
+                  endPos = workString.length; 
+                  model.textContent = workString.slice(startPos, endPos);
+                  startPos = startPos-28;
+                  custName.textContent = custName.slice(0,startPos);
+                  if (model.startsWith("MX-M")) {
+                     MFPtype.textContent="Monochrome";} 
+                     else {MFPtype.textContent="Color";}
+                  if ((model.startsWith("BP")) && (model.charAt(5)="M")) 
+                     {MFPtype.textContent="Monochrome";}
+  // Cust name, Output model and MFP type to json                 
+                  }   // End of checking if the Device Name line has a Model Number
+ //  End of checking if the Device Name line has a Model Number
+                break;
+              case (i=2):
+                  // if the device model is at the beginning of the line  
+                  startPos = 14;
+                  endPos = workString.length;
+                  modTxt = workString.slice(startPos, endPos);
+                  if (modTxt != null) {model.textContent = modTxt};
+                  console.log(`modTxt: ${modTxt}`);
+                  if (modTxt.startsWith("MX-M")) {MFPtype.textContent="Monochrome";} else {MFPtype.textContent="Color";}
+                  if ((modTxt.startsWith("BP")) && (modTxt.charAt(5)="M")) {MFPtype.textContent="Monochrome";}
+                  break;
+              default:
+                  console.log(`Function for ${keyPhrase[i]} not yet implemented.`);
+
+
+                }       // processing the device model if it is at the beginning of the line 
+                   
+
+
+
+
+            }  // end switch
+          
+
+
+
+
+            }                     // end of parsing line and storing data values
+          }                       // end of record processing, move ahead
+
 
           
   // output to eventually be routed to the json creator
@@ -139,8 +196,8 @@ fileInput.addEventListener('change', function(event) {  // Get the file selected
      } ; // end of checking for blank lines - line 88
 
      if (endRecordFlag) {
-      document.removeEventListener('click', fileContent);
-      console.log("End Record Delimiter Received");
+      fileContent.removeEventListener('click');
+      
       console.log("Click Read File to continue");
       fileContent.addEventListener ('click', endUserVerify() , false );
      }
