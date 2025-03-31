@@ -36,16 +36,18 @@ let dummyTxt=""; let modTxt="";  // TXT
 let startPos = 0; let endPos = 0;  // VAR
 let endRecordFlag = false; // BOOL
 
+//-------------------------------------------------------------
+//              FUNCTIONS AND SUBROUTINES
 
 
 
 //Stop, wait, then Click between records at the '-----'   ..... not woirking at all
 async function endUserVerify() {
   
-  fileContent.addEventListener ('change', function(event) { 
+//  fileContent.addEventListener ('change', function(event) { 
      // proceed after acknowledging end record delimiter "-----"
     // event.target.disabled = false;
-  });  // End Onclick Permission to Process
+//  });  // End Onclick Permission to Process
 }                                                       // End function endUserVerify
 
 
@@ -136,14 +138,47 @@ fileInput.addEventListener('change', function(event) {  // Get the file selected
 
      } ; // end of checking for blank lines - line 88
 
-      if (endRecordFlag) {
-        console.log("End Record Delimiter Received")
-        fileContent.addEventListener ('click', function(event) {  //hold for clicking on Read File button
+     if (endRecordFlag) {
+      console.log("End Record Delimiter Received");
+      console.log("Click Read File to continue");
+        fileContent.addEventListener ('click', endUserVerify() , false );
+     }
+             //hold for clicking on Read File button
 // SOMETHING'S GOTTA HAPPEN HERE .. ??????
+ //       });
+        
+
+/*        const button = document.getElementById('myButton');
+
+        button.addEventListener('click', function() {
+          // Code to execute after the button is clicked
+          console.log('Button clicked!');
+          // Place the rest of your code here
         });
-        }
+        
+        // The code below will execute immediately without waiting for the click
+        console.log('This will be logged before the button is clicked.');
 
 
+        const element = document.getElementById('myElement');
+
+element.addEventListener('click', function() {
+  if (/* your condition *"/*") { ""
+    // Code to execute after the click and condition are met
+/*    console.log('Element clicked and condition met!');
+    // ... more code ...
+  } else {
+    // Code to execute if the condition is not met
+    console.log('Element clicked, but condition not met.');
+  }
+});
+
+// The rest of your code that doesn't depend on the click event continues here
+*/
+        
+        
+        
+        
 
 
 
