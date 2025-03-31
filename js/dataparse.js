@@ -99,152 +99,107 @@ fileInput.addEventListener('change', function(event) {  // Get the file selected
   
       
       line = line.trim();         // remove spaces at both ends
-// output to browser
-      dateTime.textContent = (`Line ${index}: ${line}`);     // Workin' Aweso
+ //   output to browser
+      dateTime.textContent = (`Line ${index}: ${line}`);     // Workin' Awesome
       
 
-      if (line.length > 1 )  { //remove checking out or processing blank lines
-        console.log(`Line ${index + 1}: ${line}`);       // Workin' Awesome
-        let workString = line
+     if (line.length > 1 )  { //remove checking out or processing blank lines
+      console.log(`Line ${index + 1}: ${line}`);       // Workin' Awesome
+      let workString = line;
 
-
-
-
-     // THIS IS THE BIG OUTPUT AREA.  **CAN* WE GET OUTPUT PAST THIS JS??!   
+ // THIS IS THE BIG OUTPUT AREA.  **CAN* WE GET OUTPUT PAST THIS JS??!   
  
-        console.log(`${workString}`);  /// working, shows the line without the index number
-        console.log(`${line.length} , ${workString.length}`); ///working, equal length
+      console.log(`${workString}`);  /// working, shows the line without the index number
+      console.log(`${line.length} , ${workString.length}`); ///working, equal length
 //       some kind of DOM output to the html goes here
 
-        for (let i = 0; i < 8; i++) {  // Run each line through the option of choices      // console.log(stVar.toString()); (useful)
-          console.log(i);               // index value as the string array is accessed
-          let tempString = keyPhrase[i];  // pass the string array value to a temp var - protect the array
-          console.log(`Array selection: ${tempString}`);
-          console.log(`WorkPhrase: ${workString}`);
 
-          // check for end of record first
-          if (line.includes("-----"))  {
-            endRecordFlag = true;
-            console.log(`Record end reached?  ${endRecordFlag}`);
-            console.log("End Record Delimiter Received");
-          } else {
+
+
+
+
+      for (let i = 0; i < 8; i++) {  // Run each line through the option of choices      // console.log(stVar.toString()); (useful)
+        console.log(i);               // index value as the string array is accessed
+        let tempString = keyPhrase[i];  // pass the string array value to a temp var - protect the array
+        console.log(`Array selection: ${tempString}`);
+        console.log(`WorkPhrase: ${workString}`);
+
+   // check for end of record first
+        if (line.includes("-----"))  {
+          endRecordFlag = true;
+          console.log(`Record end reached?  ${endRecordFlag}`);
+          console.log("End Record Delimiter Received");
+        } else {
           if (workString.startsWith(tempString)) {
             switch (i) {
-              case (i=0):
+              case 0:
                 dateTime.textContent = workString;
-                // output dateTime to JSON
+         // output dateTime to JSON
                 break;
-              case (i=1):            
+              case 1:            
                 startPos = 13;
                 endPos = workString.length;
                 let custText = workString.slice(startPos, endPos); 
                 custName.textContent = custText;
                 if (workString.indexOf(keyPhrase[2])>0) {    // Processing the model number
-                  console.log("Model number is present on the same line as the customer's ID");
-                  startPos = (workString.indexOf(keyPhrase[2])+14);
-                  endPos = workString.length; 
-                  model.textContent = workString.slice(startPos, endPos);
-                  startPos = startPos-28;
-                  custName.textContent = custName.slice(0,startPos);
-                  if (model.startsWith("MX-M")) {
+                   console.log("Model number is present on the same line as the customer's ID");
+                   startPos = (workString.indexOf(keyPhrase[2])+14);
+                   endPos = workString.length; 
+                   model.textContent = workString.slice(startPos, endPos);
+                   startPos = startPos-28;
+                   custName.textContent = custName.slice(0,startPos);
+                   if (model.startsWith("MX-M")) {
                      MFPtype.textContent="Monochrome";} 
                      else {MFPtype.textContent="Color";}
-                  if ((model.startsWith("BP")) && (model.charAt(5)="M")) 
+                   if ((model.startsWith("BP")) && (model.charAt(5)=="M")) 
                      {MFPtype.textContent="Monochrome";}
-  // Cust name, Output model and MFP type to json                 
-                  }   // End of checking if the Device Name line has a Model Number
- //  End of checking if the Device Name line has a Model Number
-                break;
-              case (i=2):
-                  // if the device model is at the beginning of the line  
-                  startPos = 14;
-                  endPos = workString.length;
-                  modTxt = workString.slice(startPos, endPos);
-                  if (modTxt != null) {model.textContent = modTxt};
-                  console.log(`modTxt: ${modTxt}`);
-                  if (modTxt.startsWith("MX-M")) {MFPtype.textContent="Monochrome";} else {MFPtype.textContent="Color";}
-                  if ((modTxt.startsWith("BP")) && (modTxt.charAt(5)="M")) {MFPtype.textContent="Monochrome";}
-                  break;
+// Cust name, Output model and MFP type to json                 
+                }   // End of  checking if the Device Name line has a Model Number
+              break; // End Case 1
+              case 2:
+        // if the device model is at the beginning of the line  
+               startPos = 14;
+               endPos = workString.length;
+               modTxt = workString.slice(startPos, endPos);
+               if (modTxt != null) {model.textContent = modTxt};
+               console.log(`modTxt: ${modTxt}`);
+               if (modTxt.startsWith("MX-M")) {
+                MFPtype.textContent="Monochrome";
+                } else {MFPtype.textContent="Color";}
+               if ((modTxt.startsWith("BP")) && (modTxt.charAt(5)=="M")) {
+                MFPtype.textContent="Monochrome";}
+                break; // End Case 2
               default:
-                  console.log(`Function for ${keyPhrase[i]} not yet implemented.`);
+                console.log(`Function for ${keyPhrase[i]} not yet implemented.`);
 
-
-                }       // processing the device model if it is at the beginning of the line 
-                   
-
-
-
-
-            }  // end switch
-          
-
-
-
-
-            }                     // end of parsing line and storing data values
-          }                       // end of record processing, move ahead
-
-
-          
-  // output to eventually be routed to the json creator
-                }    //done running through the string array for parsing this line
+              } //end switch case
+      } //end if (workString.startsWith(tempString))
+     } //end else
+     } // end for loop
+    
 
 //  END OF TEXT PROCESSING AND CONVERSION 
 
 
+  }  // end of filtering out blank lines
+   
 
-     } ; // end of checking for blank lines - line 88
 
-     if (endRecordFlag) {
-      fileContent.removeEventListener('click');
+    if (endRecordFlag) {
+      fileContent.removeEventListener('click', arguments.callee);
       
       console.log("Click Read File to continue");
-      fileContent.addEventListener ('click', endUserVerify() , false );
+      fileContent.addEventListener ('click', endUserVerify, false );
      }
              //hold for clicking on Read File button
-// SOMETHING'S GOTTA HAPPEN HERE .. ??????
- //       });
+//SOMETHING'S GOTTA HAPPEN HERE .. ?????
+
         
-
-/*        const button = document.getElementById('myButton');
-
-        button.addEventListener('click', function() {
-          // Code to execute after the button is clicked
-          console.log('Button clicked!');
-          // Place the rest of your code here
-        });
-        
-        // The code below will execute immediately without waiting for the click
-        console.log('This will be logged before the button is clicked.');
+ 
+    }); // end of splitting lines off the string wad 
 
 
-        const element = document.getElementById('myElement');
-
-element.addEventListener('click', function() {
-  if (/* your condition *"/*") { ""
-    // Code to execute after the click and condition are met
-/*    console.log('Element clicked and condition met!');
-    // ... more code ...
-  } else {
-    // Code to execute if the condition is not met
-    console.log('Element clicked, but condition not met.');
-  }
-});
-
-// The rest of your code that doesn't depend on the click event continues here
-*/
-        
-        
-        
-        
-
-
-
-}); // end of splitting lines off the string wad 
-
-
-
-   }       // End of loading the text fIle into one string variable   (reader: onload)
+    }       // End of (reader: onload) --loading the text fIle into one string variable 
 
   
    // Read the file as text
@@ -254,6 +209,7 @@ element.addEventListener('click', function() {
 
 
     })  // End of Click to Proceed Reading the Text file
+    // fileContent.addEventListener ('click', function(event)
   } else {       // end of checking to see if the file is present
     console.log("No file selected.");
 
