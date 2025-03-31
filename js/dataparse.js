@@ -90,7 +90,9 @@ fileInput.addEventListener('change', function(event) {  // Get the file selected
  
 
 
-// Trim each line off the giant string ball and process 
+// PROCESSING OF EACH LINE FOR ITS WORTHWHILE DATA ELEMENTS
+
+// Trim each line off the giant string ball to process 
     lines.forEach((line, index) => {
   
       
@@ -102,6 +104,9 @@ fileInput.addEventListener('change', function(event) {  // Get the file selected
       if (line.length > 1 )  { //remove checking out or processing blank lines
         console.log(`Line ${index + 1}: ${line}`);       // Workin' Awesome
         let workString = line
+
+
+
 
      // THIS IS THE BIG OUTPUT AREA.  **CAN* WE GET OUTPUT PAST THIS JS??!   
  
@@ -118,8 +123,10 @@ fileInput.addEventListener('change', function(event) {  // Get the file selected
      // 
      // 
      // 
-          if (line.includes("-----"))     {endRecordFlag = !endRecordFlag}
+          if (line.includes("-----"))     {endRecordFlag = true;}
           console.log(`Record end reached?  ${endRecordFlag}`);
+
+          
   // output to eventually be routed to the json creator
                 }    //done running through the string array for parsing this line
 
@@ -132,17 +139,15 @@ fileInput.addEventListener('change', function(event) {  // Get the file selected
       if (endRecordFlag) {
         console.log("End Record Delimiter Received")
         fileContent.addEventListener ('click', function(event) {  //hold for clicking on Read File button
-        
-        
+// SOMETHING'S GOTTA HAPPEN HERE .. ??????
         });
-
-      }
-
+        }
 
 
 
 
-}); // end of splitting off the lines from the string wad 
+
+}); // end of splitting lines off the string wad 
 
 
 
