@@ -139,9 +139,10 @@ fileInput.addEventListener('change', function(event) {  // Get the file selected
      } ; // end of checking for blank lines - line 88
 
      if (endRecordFlag) {
+      document.removeEventListener('click', fileContent);
       console.log("End Record Delimiter Received");
       console.log("Click Read File to continue");
-        fileContent.addEventListener ('click', endUserVerify() , false );
+      fileContent.addEventListener ('click', endUserVerify() , false );
      }
              //hold for clicking on Read File button
 // SOMETHING'S GOTTA HAPPEN HERE .. ??????
