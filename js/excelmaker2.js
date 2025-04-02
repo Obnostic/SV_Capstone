@@ -16,6 +16,9 @@
  * @param {string} filename - The name of the file to save (without extension).  Defaults to "spreadsheet".
  * @param {string} sheetName - The name of the sheet in the spreadsheet. Defaults to "Sheet1".
  */
+const XLSX = require('xlsx'); // Or import/require the xlsx library
+
+
 function createAndSaveExcel(data, filename = "spreadsheet", sheetName = "Sheet1") {
     try {
       // 1. Create a workbook

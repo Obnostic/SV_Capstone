@@ -1,5 +1,5 @@
-"start": "node app.js",
-"dev": "nodemon app.js"
+"start": "node app.js";
+"dev": "nodemon app.js";
 
 // Requiring module
 const express = require('express');

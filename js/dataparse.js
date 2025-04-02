@@ -17,8 +17,9 @@ const tonerVLow = document.getElementById("toner-v-low");
 
 
 
-let workString = processString;
-
+let workString = processString; let modTxt="";
+let startPos = 0; let endPos = 0;
+let colorFlag = false;
 
 for (let i = 0; i < 8; i++) {  // Run each line through the option of choices      // console.log(stVar.toString()); (useful)
   let arrString = keyPhrase[i];  // pass the string array value to a temp var - protect the array
@@ -115,6 +116,7 @@ if (workString.startsWith(arrString)) {
 
     case 7:
       lineRecord[indEx]="-----"; 
+      break;
       
     default:
       console.log(`Function for ${keyPhrase[i]} not yet implemented.`);
