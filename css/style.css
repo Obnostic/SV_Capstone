@@ -5,6 +5,10 @@
         box-sizing: border-box;
 } 
 
+body {
+    background-color: rgb(246, 253, 255);
+}
+
 .text-container { 
     display: flex;
     justify-content: left;  
@@ -24,18 +28,18 @@ word-break: break-all;
 
 
 p {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     word-wrap: break-word;
     word-break: break-all;
 }
 
 .js {
 
-     color:black;
+     color:rgb(34, 34, 34);
 }
 
-.typed-text {
-    color: darkslategray; 
+.text {
+    color: rgb(14, 22, 22); 
 }
 
 .cursor {

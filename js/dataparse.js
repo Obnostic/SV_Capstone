@@ -14,31 +14,20 @@ const tonerVLow = document.getElementById("toner-v-low");
 
 
 
-//remove checking out or processing blank lines
-       // Workin' Awesome
+
+
 let workString = processString;
-
-// THIS IS THE BIG OUTPUT AREA.  **CAN* WE GET OUTPUT PAST THIS JS??!   
-
-console.log(`Received: ${workString}`);  /// working, shows the line without the index number
-//       some kind of DOM output to the html goes here
-
-
-
-
 
 
 for (let i = 0; i < 8; i++) {  // Run each line through the option of choices      // console.log(stVar.toString()); (useful)
-  console.log(`Pattern run ${i}`);               // index value as the string array is accessed
   let arrString = keyPhrase[i];  // pass the string array value to a temp var - protect the array
-  console.log(`Array selection: ${arrString}`);
-  console.log(`WorkPhrase: ${workString}`);
-
-
+//  console.log(`Array selection: ${arrString}`);
+//  console.log(`WorkPhrase: ${workString}`);
 
 
 
 if (workString.startsWith(arrString)) {
+  console.log(`MATCH!! ${workString}`);
   console.log(`Starting with array index ${indEx}`);
   switch (i) {
     case 0:
@@ -131,10 +120,11 @@ if (workString.startsWith(arrString)) {
      
   } //end switch case   
   indEx++;
+  console.log(`indEx increment after processing:  ${indEx}`);
 } //end of string matching
 } // end of parsing the line to compare with array elements
 
 //  END OF TEXT PROCESSING AND CONVERSION 
 
-return lineRecord, indEx;
+return {lineRecord, indEx};
 }  // end of subroutine DataParse

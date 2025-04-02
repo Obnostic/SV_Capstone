@@ -28,7 +28,6 @@ const keyPhrase =["2025" , "Device Name" , "Device Model",
 
 // DECLARATION OF NEEDED WORK VARIABLES
 let lineRec = [];   //array
-let a=0;    // a is the index for tracking the array
 let dummyTxt=""; let modTxt="";  // TXT
 let startPos = 0; let endPos = 0;  let d=0; let indEx=0; // VAR
 let endRecordFlag = false; // BOOL
@@ -84,7 +83,7 @@ fileInput.addEventListener('change', function(event) {  // Get the file selected
         dataParse (line,lineRec,indEx);  // Dataparse the line
         }  // end of filtering out blank lines
    
-
+        console.log(`Index upon return from parse: ${indEx}`)
 //    if (endRecordFlag) {
 //    
       
