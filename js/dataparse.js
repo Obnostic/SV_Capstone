@@ -1,5 +1,6 @@
 
-async function dataParse (processString, lineRecord, indEx)  {
+
+function dataParse (processString, lineRecord, indEx)  {
 
 //DOM obj to pass to html
 const dateTime =  document.getElementById("date-n-time");
@@ -12,7 +13,7 @@ const colorCount = document.getElementById("col-total");
 const tonerLow = document.getElementById("toner-low");
 const tonerVLow = document.getElementById("toner-v-low");
 
-
+//import {indEx} from "../SV_Capstone/js/filehandler.js";
 
 
 
@@ -49,17 +50,17 @@ if (workString.startsWith(arrString)) {
          model.textContent = workString.slice(startPos, endPos);
          lineRecord[indEx] = workString.slice(startPos, endPos);
          custName.textContent = custName.textContent.slice(0,startPos);
-         lineRecord[indEx-1] = custName.textContent.slice(0,startPos);
+         lineRecord[indEx] = custName.textContent.slice(0,startPos);
          if (model.textContent.startsWith("MX-M")) {
            MFPtype.textContent="Monochrome";
-           lineRecord[indEx] = "Monochrome";
+           lineRecord[indEx+1] = "Monochrome";
             colorFlag=false; } 
            else {MFPtype.textContent="Color";
-            lineRecord[indEx] = "Color";
+            lineRecord[indEx+1] = "Color";
             colorFlag=true; }
          if ((model.textContent.startsWith("BP")) && (model.charAt(5)=="M")) 
            {MFPtype.textContent="Monochrome";
-            lineRecord[indEx] = "Monochrome";
+            lineRecord[indEx+1] = "Monochrome";
             colorFlag=false;} 
            
       }   // End of  checking if the Device Name line has a Model Number
@@ -103,7 +104,7 @@ if (workString.startsWith(arrString)) {
       break;
 
     case 6:
-       lineRecord[indEx]="toner";
+       lineRecord[indEx]="tonerQuanRemain";
        tonerLow.textContent = "6-TonerBK#";
        tonerVLow.textContent = "6 VLowBK#";
        if (colorFlag) {
@@ -119,12 +120,17 @@ if (workString.startsWith(arrString)) {
       console.log(`Function for ${keyPhrase[i]} not yet implemented.`);
      
   } //end switch case   
-  indEx++;
-  console.log(`indEx increment after processing:  ${indEx}`);
+    indEx++;
 } //end of string matching
+//else {
+//  indEx--;
+//}
+
+
+
 } // end of parsing the line to compare with array elements
 
 //  END OF TEXT PROCESSING AND CONVERSION 
-
+//export {indEx};
 return {lineRecord, indEx};
 }  // end of subroutine DataParse

@@ -4,6 +4,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="../SV_Capstone/css/style.css">
+        <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
         <title>Capstone:  Text Parser</title>
     </head>
 
@@ -26,13 +27,14 @@
 
 <p class="text">Toner Low:&nbsp;&nbsp;<span id="toner-low"></span>Toner Very Low:&nbsp;&nbsp;<span id="toner-v-low"></span></p>
 <p class="text"><span id="message"></span></p>
-<button id="continue-next-record">Process Record</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<button id="XLS-Creator-GO">Make Spreadsheet</button>
+<button id="XLS-Creator-GO" onclick="generateExcel()">Make Spreadsheet</button>
 
 
 
 <script src="../SV_Capstone/js/filehandler.js"></script>
 <script src="../SV_Capstone/js/dataparse.js"></script>
+<script src="../SV_Capstone/js/jsonmaker.js"></script>
+<script src="../SV_Capstone/js/googleconnect.js"></script>
 <script src="../SV_Capstone/js/excelmaker.js"></script>
 
 

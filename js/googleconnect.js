@@ -55,12 +55,9 @@
   
       function generateExcel() {
         const myData = [
-          ["WHAT", "WHO", "WHY", "A NUMBER"],
-          ["Slip & Fall", "Some Dude", "Wet Floor", 16],
-          ["Banged Head", "My Dad", "Tripped on the Stairs", 23],
-          ["Sunburn", "Sister", "Fell Asleep", 12012]
+          "../SV_Capstone/json/template.json"
         ];
-        createAndSaveExcel(myData, "my_excel_output", "MySheet");
+        createAndSaveExcel(myData, "SV_Result_Spreadsheet", "MFP Stats");
       }
 
       /*

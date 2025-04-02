@@ -36,14 +36,25 @@ let endRecordFlag = false; // BOOL
 //              FUNCTIONS AND SUBROUTINES
 
 
+// pause display to show each record processed
+async function pauseTimer(milliseconds) {
+  return new Promise(resolve => setTimeout(resolve, milliseconds));
+}
 
+async function pauseDisplay() {
+  messAge.textContent = "Processing next record...";
+  await pauseTimer(3000); // 3000 milliseconds = 3 seconds
+  messAge.textContent = "";
+}
+
+          
 
 
 // ---------------------  PROGRAM START --------------------
 for (let d = 0; d < 8; d++) {  // column titles are first array entry
   let f=keyPhrase[d];       
-  console.log(f.toString());  // output to eventually be routed to the json creator
-}                      //access to table elements are working
+  console.log(f.toString());  // output to show that access to table elements are working
+}  
 
 
 // could be useful
@@ -79,30 +90,29 @@ fileInput.addEventListener('change', function(event) {  // Get the file selected
       line = line.trim();         // remove spaces at both ends
 
 
-      if (line.length > 1 )  {  
+      if (line.length > 1 )  {
+//        export indEx;
         dataParse (line,lineRec,indEx);  // Dataparse the line
+//        import {indEx} from "../SV_Capstone/js/dataparse.js";
+            //hold and display
+            pauseDisplay();
+ //       indEx++;
+
+
+
+        console.log(`indEx increment after processing:  ${indEx}`);
         }  // end of filtering out blank lines
    
-        console.log(`Index upon return from parse: ${indEx}`)
-//    if (endRecordFlag) {
-//    
-      
-//      console.log("Click Read File to continue");
- //     fileContent.addEventListener ('click', endUserVerify, false );
-   
 
-    messAge.textContent = "End of record. Click Process Record for next.";
-    continueNextRecord.addEventListener ('click', function(event) { 
-      messAge.textContent = "";
-            })
  
-            let arrayTotal = lineRec.length
-            for (let k = 0; k < arrayTotal; k++) { 
-               console.log(`Array ${k} : ${lineRec[k]}`);
-               }
+
     }); // end of splitting lines off the string blob
 
-
+    let arrayTotal = lineRec.length
+    for (let k = 0; k < arrayTotal; k++) { 
+       console.log(`Array ${k} : ${lineRec[k]}`);
+       }
+    
 
     }       // End of (reader: onload) --loading the text fIle into one string variable 
 
@@ -114,8 +124,7 @@ fileInput.addEventListener('change', function(event) {  // Get the file selected
 
 
     })  // End of Click to Proceed Reading the Text file
-  
-    
+
   } else {       // end of checking to see if the file is present
     console.log("No file selected.");
 
