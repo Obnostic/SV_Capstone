@@ -1,17 +1,5 @@
 
-// Capstone Data Parser
-// Read a text file of Sharp MFP Statistics Reports
-// Parse to gather selected data and create an Excel file
-
-"use strict";
-
-// DOM obj for file and button ops
-const fileInput = document.getElementById("file-input");
-const fileContent = document.getElementById("file-content");
-
-//might be useful
-//const formSubmit = document.getElementById("form-submit");
-//const textLineOutput = formSubmit.elements["text-line-output"];
+async function dataParse (processString, lineRecord, indEx)  {
 
 //DOM obj to pass to html
 const dateTime =  document.getElementById("date-n-time");
@@ -25,91 +13,14 @@ const tonerLow = document.getElementById("toner-low");
 const tonerVLow = document.getElementById("toner-v-low");
 
 
-// DEFINING THE KEY PHRASES LISTED, IN ORDER, ON THE SHARP MFP REPORT
-  // Both Device Name and Model MAY or MAY NOT be on the same line
-const keyPhrase =["2025" , "Device Name" , "Device Model",
-     "Serial" , "Black & White Total Print Count" , "Color Total Print Count" , "Toner Residual" , "-----" ] // <- endRecordFlag
 
+//remove checking out or processing blank lines
+       // Workin' Awesome
+let workString = processString;
 
-// DECLARATION OF NEEDED WORK VARIABLES
-let dummyTxt=""; let modTxt="";  // TXT
-let startPos = 0; let endPos = 0;  // VAR
-let endRecordFlag = false; // BOOL
+// THIS IS THE BIG OUTPUT AREA.  **CAN* WE GET OUTPUT PAST THIS JS??!   
 
-//-------------------------------------------------------------
-//              FUNCTIONS AND SUBROUTINES
-
-
-
-//Stop, wait, then Click between records at the '-----'   ..... not woirking at all
-async function endUserVerify() {
-  
-//  fileContent.addEventListener ('change', function(event) { 
-     // proceed after acknowledging end record delimiter "-----"
-    // event.target.disabled = false;
-//  });  // End Onclick Permission to Process
-}                                                       // End function endUserVerify
-
-
-// breaking line data down to its' individual values - low priority
-function parseModel(txt,cFlag) {}
-function trimSerial(txt) {}
-function colorTally(txt,cFlag) {}
-function monoTally(txt,cFlag) {}
-function lowTonerAlert(txt,whichTC,cFlag) {}
-//  this will probably have another method spliced in soon...
-
-
-// ---------------------  PROGRAM START --------------------
-for (let d = 0; d < 8; d++) {  // This is to test access to the array
-  let f=keyPhrase[d];       
-  console.log(f.toString());  // output to eventually be routed to the json creator
-}                      //access to table elements are working
-
-
-// could be useful
-//  textLineOutput.value = y.textContent;
-//  formSubmit.addEventListener("output", textLineOutput);
-
-
-//-----------------------------------------------------------------------------------
- 
-
-fileInput.addEventListener('change', function(event) {  // Get the file selected by user in the html
-  const file = event.target.files[0]; 
-
-  if (file) {                                           // avoids bombout for no files chosen
-    const reader = new FileReader();
-
-    fileContent.addEventListener ('click', function(event) {  //hold for clicking on Read File button
-   
-     // Get the file content as a string
-    reader.onload = function(e) {
-    const fileContent = e.target.result;  // at this point fileContent has the entire file as one string
-     
-// Split the content into lines (by newline characters)
-    const lines = fileContent.split('\n');     // other detectors? - messing with the file length
- 
-
-
-// PROCESSING OF EACH LINE FOR ITS WORTHWHILE DATA ELEMENTS
-
-// Trim each line off the giant string ball to process 
-    lines.forEach((line, index) => {
-  
-      
-      line = line.trim();         // remove spaces at both ends
-
-       
-      
-
-     if (line.length > 1 )  { //remove checking out or processing blank lines
-      console.log(`Line ${index + 1}: ${line}`);       // Workin' Awesome
-      let workString = line;
-
- // THIS IS THE BIG OUTPUT AREA.  **CAN* WE GET OUTPUT PAST THIS JS??!   
- 
-      console.log(`${workString}`);  /// working, shows the line without the index number
+console.log(`Received: ${workString}`);  /// working, shows the line without the index number
 //       some kind of DOM output to the html goes here
 
 
@@ -117,114 +28,113 @@ fileInput.addEventListener('change', function(event) {  // Get the file selected
 
 
 
-      for (let i = 0; i < 8; i++) {  // Run each line through the option of choices      // console.log(stVar.toString()); (useful)
-        console.log(i);               // index value as the string array is accessed
-        let tempString = keyPhrase[i];  // pass the string array value to a temp var - protect the array
-        console.log(`Array selection: ${tempString}`);
-        console.log(`WorkPhrase: ${workString}`);
-
-   // check for end of record first
-        if (line.includes("-----"))  {
-          endRecordFlag = true;
-          console.log(`Record end reached?  ${endRecordFlag}`);
-          console.log("End Record Delimiter Received");
-//            here is the actual parsing nitty grittty
-        } else {
-          if (workString.startsWith(tempString)) {
-            switch (i) {
-              case 0:
-                dateTime.textContent = workString;
-         // output dateTime to JSON
-                break;
-
-              case 1:            
-                startPos = 13;
-                endPos = workString.length;
-                let custText = workString.slice(startPos, endPos); 
-                custName.textContent = custText;
-                if (workString.indexOf(keyPhrase[2])>0) {    // Processing the model number
-                   console.log("Model number is present on the same line as the customer's ID");
-                   startPos = (workString.indexOf(keyPhrase[2])+14);
-                   endPos = workString.length; 
-                   model.textContent = workString.slice(startPos, endPos);
-                   startPos = startPos-28;
-                   custName.textContent = custName.slice(0,startPos);
-                   if (model.startsWith("MX-M")) {
-                     MFPtype.textContent="Monochrome";} 
-                     else {MFPtype.textContent="Color";}
-                   if ((model.startsWith("BP")) && (model.charAt(5)=="M")) 
-                     {MFPtype.textContent="Monochrome";}
-// Cust name, Output model and MFP type to json                 
-                }   // End of  checking if the Device Name line has a Model Number
-              break; // End Case 1
-
-              case 2:          // if the device model is at the beginning of the line  
-               startPos = 14;
-               endPos = workString.length;
-               modTxt = workString.slice(startPos, endPos);
-               if (modTxt != null) {model.textContent = modTxt};
-               console.log(`modTxt: ${modTxt}`);
-               if (modTxt.startsWith("MX-M")) {
-                MFPtype.textContent="Monochrome";
-                } else {MFPtype.textContent="Color";}
-               if ((modTxt.startsWith("BP")) && (modTxt.charAt(5)=="M")) {
-                MFPtype.textContent="Monochrome";}
-                break; // End Case 2
-
-              case 3: // Remove the padded 0's from the end of the S/N
-               serNo.textContent = workString.slice(14, -2);
-               break;  // End Case 3        
-        
-              case 4:  // B&W Total - Col Total may be on same line
-
-               break; // End Case 4
+for (let i = 0; i < 8; i++) {  // Run each line through the option of choices      // console.log(stVar.toString()); (useful)
+  console.log(`Pattern run ${i}`);               // index value as the string array is accessed
+  let arrString = keyPhrase[i];  // pass the string array value to a temp var - protect the array
+  console.log(`Array selection: ${arrString}`);
+  console.log(`WorkPhrase: ${workString}`);
 
 
-              default:
-                console.log(`Function for ${keyPhrase[i]} not yet implemented.`);
-            } //end switch case
 
-          } //end if checking if the workString startsWith the tempString from the array
-        } //end of the 'else' that signified the end delimiter has not been reached
-      } // end of parsing the line to compare with array elements
-    
+
+
+if (workString.startsWith(arrString)) {
+  console.log(`Starting with array index ${indEx}`);
+  switch (i) {
+    case 0:
+      dateTime.textContent = workString;              // output to html
+      lineRecord[indEx]=(workString.toString());
+// output dateTime to JSON
+      break;
+
+    case 1:            
+      startPos = 13;
+      endPos = workString.length;
+      let custText = workString.slice(startPos, endPos); 
+      custName.textContent = custText;
+      lineRecord[indEx]=(workString.toString());
+      if (workString.indexOf(keyPhrase[2])>0) {    // Processing the model number
+         console.log("Model number is present on the same line as the customer's ID");
+         startPos = (workString.indexOf(keyPhrase[2])+14);
+         endPos = workString.length; 
+         model.textContent = workString.slice(startPos, endPos);
+         lineRecord[indEx] = workString.slice(startPos, endPos);
+         custName.textContent = custName.textContent.slice(0,startPos);
+         lineRecord[indEx-1] = custName.textContent.slice(0,startPos);
+         if (model.textContent.startsWith("MX-M")) {
+           MFPtype.textContent="Monochrome";
+           lineRecord[indEx] = "Monochrome";
+            colorFlag=false; } 
+           else {MFPtype.textContent="Color";
+            lineRecord[indEx] = "Color";
+            colorFlag=true; }
+         if ((model.textContent.startsWith("BP")) && (model.charAt(5)=="M")) 
+           {MFPtype.textContent="Monochrome";
+            lineRecord[indEx] = "Monochrome";
+            colorFlag=false;} 
+           
+      }   // End of  checking if the Device Name line has a Model Number
+      break; // End Case 1
+
+    case 2:          // if the device model is at the beginning of the line  
+       startPos = 14;
+       endPos = workString.length;
+       modTxt = workString.slice(startPos, endPos);
+       if (modTxt != null) {model.textContent = modTxt;
+          lineRecord[indEx] = modTxt;}
+       console.log(`modTxt: ${modTxt}`);
+       if (modTxt.startsWith("MX-M")) {
+          MFPtype.textContent="Monochrome";
+          lineRecord[indEx]="Monochrome";
+          colorFlag = false;
+        } else {  MFPtype.textContent="Color";
+          lineRecord[indEx]="Color";
+          colorFlag=true;   }
+       if ((modTxt.startsWith("BP")) && (modTxt.charAt(5)=="M")) {
+          MFPtype.textContent="Monochrome";
+          lineRecord[indEx]="Monochrome";
+          colorFlag = false; }
+       break; // End Case 2
+
+    case 3: // Remove the padded 0's from the end of the S/N
+       serNo.textContent = workString.slice(14, -2);
+       lineRecord[indEx]= workString.slice(14, -2);
+       break;  // End Case 3        
+
+    case 4:  // B&W Total - Col Total may be on same line
+        lineRecord[indEx]="4-B&W";
+        monoCount.textContent= "4-B&W";
+        break; // End Case 4
+
+    case 5:
+      if (colorFlag) {
+        lineRecord[indEx]="5-Color#";
+        colorCount.textContent= "5-Color#";
+      } else lineRecord[indEx]="";
+      break;
+
+    case 6:
+       lineRecord[indEx]="toner";
+       tonerLow.textContent = "6-TonerBK#";
+       tonerVLow.textContent = "6 VLowBK#";
+       if (colorFlag) {
+        tonerLow.textContent ="6-Toner KCMY";
+        tonerVLow.textContent = "6 VLowKCMY";
+      }
+      break;
+
+    case 7:
+      lineRecord[indEx]="-----"; 
+      
+    default:
+      console.log(`Function for ${keyPhrase[i]} not yet implemented.`);
+     
+  } //end switch case   
+  indEx++;
+} //end of string matching
+} // end of parsing the line to compare with array elements
 
 //  END OF TEXT PROCESSING AND CONVERSION 
 
-
-  }  // end of filtering out blank lines
-   
-
-
-    if (endRecordFlag) {
-//      fileContent.removeEventListener('click', arguments.callee);
-      
-      console.log("Click Read File to continue");
-      fileContent.addEventListener ('click', endUserVerify, false );
-     }
-             //hold for clicking on Read File button
-//SOMETHING'S GOTTA HAPPEN HERE .. ?????
-
-        
- 
-    }); // end of splitting lines off the string wad 
-
-
-    }       // End of (reader: onload) --loading the text fIle into one string variable 
-
-  
-   // Read the file as text
-      reader.readAsText(file);
-      
-
-
-
-    })  // End of Click to Proceed Reading the Text file
-    // fileContent.addEventListener ('click', function(event)
-  } else {       // end of checking to see if the file is present
-    console.log("No file selected.");
-
-
-  }              // and this is the end of the catchall in case you cancel your file choice - Line 64  }              // and this is the end of the catchall in case you cancel your file choice - Line 64  }              // and this is the end of the catchall in case you cancel your file choice - Line 64
-}); // End of the addeventlistener that selects the text file - Line 62
-
+return lineRecord, indEx;
+}  // end of subroutine DataParse

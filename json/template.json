@@ -1,0 +1,16 @@
+{
+  "name": "Example Data",
+  "version": 1,
+  "items": [
+    [
+      "Report Date/Time",
+      "Name",
+      "Model",
+      "Serial No.",
+      "Black & White Total",
+      "Color Total",
+      "Toner Low",
+      "End Delimeter"
+    ]
+  ]
+}

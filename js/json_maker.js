@@ -81,13 +81,11 @@ function createAndSaveJSON(data, filename = "data") {
         name: "Example Data",
         version: 1.0,
         items: [
-            ["WHAT", "WHO", "WHY", "A NUMBER"],
-            ["Slip & Fall", "Some Dude", "Wet Floor", 16],
-            ["Banged Head", "My Dad", "Tripped on the Stairs", 23],
-            ["Sunburn", "Sister", "Fell Asleep", 12012]
+          ["Report Date/Time" , "Name" , "Model",
+            "Serial No." , "Black & White Total" , "Color Total" , "Toner Low" , "End Delimeter" ]
           ]
       };
-      createAndSaveJSON(myData, "test-out.json");
+      createAndSaveJSON(myData, "template");
     }
 //  </script>
 //</head>
