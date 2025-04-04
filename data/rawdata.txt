@@ -1,6 +1,6 @@
 2025/02/18 22:23:53
 
-Device Name: 4893 - McBride & Fillner
+Device Name: 4893 - Malpractice & Stretcher
 Device Model: MX-M5071
 
 Serial Number: 1501766900
@@ -47,7 +47,7 @@ Toner Residual (Bk) = 87%
 
 2025/02/18 16:31:54
 
-Device Name: Vanceburg Office id 4814
+Device Name: Wursterburg Office id 4814
 Device Model: MX-M3070
 
 Serial Number: 9501257200
@@ -98,7 +98,7 @@ Toner Residual (Bk) = 85%
 
 2025/02/18 14:01:13
 
-Device Name: 8183-A Su Servicio Versailles Rd Device Model: MX-M453N
+Device Name: 8183-A Su Delicio Versailles Rd Device Model: MX-M453N
 
 Serial Number: 1501981X00
 Machine Code: 
@@ -130,11 +130,12 @@ Fax Send Line2 = 0
 Black & White Scan to HDD Count = 0
 Full Color Scan to HDD Count = 0
 
+Toner Residual (Bk) = 15%
 -----
 
 2025/02/18 11:05:34
 
-Device Name: 4851-CBL Fayette Mall
+Device Name: 4851-Fake It Mall
 Device Model: MX-4071
 
 Serial Number: 9303778Y00
@@ -209,7 +210,7 @@ Toner Residual (Y) = 98%
 
 2025/02/18 02:01:31
 
-Device Name: ID #4807-SP
+Device Name: ID #4807-Any Old Port In My Glass
 Device Model: MX-5050V
 
 Serial Number: 8509547800
@@ -281,7 +282,7 @@ Toner Residual (Y) = 16%
 
 2025/02/18 07:20:53
 
-Device Name: 8174-Fox 56
+Device Name: 8174-Sinclair Barfcasting
 Device Model: MX-M365N
 
 Serial Number: 6500791Y00
@@ -332,7 +333,7 @@ Toner Residual (Bk) = 50-75%
 
 2025/02/18 02:01:31
 
-Device Name: ID #4807-SP
+Device Name: ID #4809 - Yes We Have No Banannas
 Device Model: MX-5050V
 
 Serial Number: 8509547800
@@ -404,7 +405,7 @@ Toner Residual (Y) = 16%
 
 2025/02/18 11:05:34
 
-Device Name: 4851-CBL Fayette Mall
+Device Name: 4851-Cowabungalow Apts
 Device Model: MX-4071
 
 Serial Number: 9303778Y00

@@ -17,24 +17,29 @@
 
 <br><br>
 <div id="">
-    <p class="text">Report Date/Time:&nbsp;&nbsp;&nbsp;<span id="date-n-time"></span></p>
-    <p class="text">Cust. MFP Name:&nbsp;&nbsp;&nbsp;<span id="customer"></span></p>
-    <p class="text">Model:&nbsp;&nbsp;<span id="mfp-model"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;S/N:&nbsp;&nbsp;<span id="ser-no"></span></p>
-    <p class="text">MFP Type:&nbsp;&nbsp;&nbsp;<span id="mfp-type"></span></p>
+    <p class="text">Report Date/Time:&nbsp;<span id="date-n-time"></span></p>
+    <p class="text">Cust. MFP Name:&nbsp;&nbsp;<span id="customer"></span></p>
+    <p class="text">Model:&nbsp;&nbsp;<span id="mfp-model"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;S/N:&nbsp;&nbsp;<span id="ser-no">
+        </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Type:&nbsp;&nbsp;<span id="mfp-type"></span></p>
     <p class="text">Monochrome Total:&nbsp;&nbsp;&nbsp;<span id="b+w-total"></span></p>
     <p class="text">Color Total:&nbsp;&nbsp;&nbsp;<span id="col-total"></span></p>
 </div>        
 
 <p class="text">Toner Low:&nbsp;&nbsp;<span id="toner-low"></span>Toner Very Low:&nbsp;&nbsp;<span id="toner-v-low"></span></p>
+
 <p class="text"><span id="message"></span></p>
-<button id="XLS-Creator-GO" onclick="generateExcel()">Make Spreadsheet</button>
+<button id="XLS-Creator-GO" onclick="generateExcel(lineRecord)">Make Spreadsheet</button>
+
+
+
+
 
 
 
 <script src="../SV_Capstone/js/filehandler.js"></script>
 <script src="../SV_Capstone/js/dataparse.js"></script>
-<script src="../SV_Capstone/js/jsonmaker.js"></script>
-<script src="../SV_Capstone/js/googleconnect.js"></script>
+<!--  script src="../SV_Capstone/js/jsonmaker.js"></script -->
+<script src="../SV_Capstone/js/arrayconverter.js"></script>
 <script src="../SV_Capstone/js/excelmaker.js"></script>
 
 

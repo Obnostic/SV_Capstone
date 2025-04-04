@@ -12,11 +12,6 @@ const continueNextRecord = document.getElementById("continue-next-record")
 const XLSCreatorGO = document.getElementById("XLS-Creator-GO");
 const messAge = document.getElementById("message");
 
-//might be useful
-//const formSubmit = document.getElementById("form-submit");
-//const textLineOutput = formSubmit.elements["text-line-output"];
-
-
 
 
 // DEFINING THE KEY PHRASES LISTED, IN ORDER, ON THE SHARP MFP REPORT
@@ -27,51 +22,51 @@ const keyPhrase =["2025" , "Device Name" , "Device Model",
 
 
 // DECLARATION OF NEEDED WORK VARIABLES
-let lineRec = [];   //array
+let lineRecord = [];   //array
 let dummyTxt=""; let modTxt="";  // TXT
-let startPos = 0; let endPos = 0;  let d=0; let indEx=0; // VAR
+let startPos = 0; let endPos = 0;  let d=0; let indEx=0; // VAR          indEx and lineRecord are the major totem objects
 let endRecordFlag = false; // BOOL
+
+
+
 
 //-------------------------------------------------------------
 //              FUNCTIONS AND SUBROUTINES
 
 
-// pause display to show each record processed
-async function pauseTimer(milliseconds) {
+// pause display to show each record processed  - Not working.  Only the last record is presented
+/*async function pauseTimer(milliseconds) {
   return new Promise(resolve => setTimeout(resolve, milliseconds));
 }
 
-async function pauseDisplay() {
+
+async function pauseDisplay() {               // i guess this is running okay but with pause timer it still looks like it doesn't do a thing
   messAge.textContent = "Processing next record...";
   await pauseTimer(3000); // 3000 milliseconds = 3 seconds
-  messAge.textContent = "";
+  messAge.textContent = "";                   // this is all upside down in its execution but you can show any message directly into the browser
 }
-
+*/
           
 
 
 // ---------------------  PROGRAM START --------------------
-for (let d = 0; d < 8; d++) {  // column titles are first array entry
+for (let d = 0; d < 8; d++) {  // column titles will be the first array entry in a large horizontal array,
+                                                        //  so row 0 = cells 0-7, row 1 = cells 8-14, row 2 = cells 15-21...
   let f=keyPhrase[d];       
-  console.log(f.toString());  // output to show that access to table elements are working
+  console.log(f.toString());  // output to show that access to table elements are working - just for show - does nothing to the array
 }  
 
 
-// could be useful
-//  textLineOutput.value = y.textContent;
-//  formSubmit.addEventListener("output", textLineOutput);
-
-
-//-----------------------------------------------------------------------------------
+//------------------------ File handling and splitting strings off the blob to process ---------------------------------
  
 
 fileInput.addEventListener('change', function(event) {  // Get the file selected by user in the html
-  const file = event.target.files[0]; 
+  const file = event.target.files[0];           // All action in the index.html stops for the enduser to select a text file of MFP data
 
   if (file) {                                           // avoids bombout for no files chosen
     const reader = new FileReader();
 
-    fileContent.addEventListener ('click', function(event) {  //hold for clicking on Read File button
+    fileContent.addEventListener ('click', function(event) {  //hold action for clicking on Read File button
    
      // Get the file content as a string
     reader.onload = function(e) {
@@ -80,27 +75,28 @@ fileInput.addEventListener('change', function(event) {  // Get the file selected
 // Split the content into lines (by newline characters)
     const lines = fileContents.split('\n');     // other detectors? - messing with the file length
  
+    messAge.textContent="";
 
+// PROCESSING OF EACH LINE FOR ITS WORTHWHILE DATA ELEMENTS 
 
-// PROCESSING OF EACH LINE FOR ITS WORTHWHILE DATA ELEMENTS
-
-// Trim each line off the giant string ball to process 
+// Trim each line off the giant string blob to process 
     lines.forEach((line, index) => {
 
-      line = line.trim();         // remove spaces at both ends
+      line = line.trim();           // remove spaces at both ends ... ?
 
 
-      if (line.length > 1 )  {
-//        export indEx;
-        dataParse (line,lineRec,indEx);  // Dataparse the line
-//        import {indEx} from "../SV_Capstone/js/dataparse.js";
-            //hold and display
-            pauseDisplay();
- //       indEx++;
+      if (line.length > 1 )  {      // filter out the blank lines
+
+  // NAUGHTY CALL!!        dataParse (line,lineRecord,indEx);  // Dataparse the line?  nfw
 
 
+let result = dataParse(line, lineRecord, indEx);
 
-        console.log(`indEx increment after processing:  ${indEx}`);
+lineRecord = result.lineRecord;
+  
+indEx = result.indEx;
+  
+  
         }  // end of filtering out blank lines
    
 
@@ -108,16 +104,17 @@ fileInput.addEventListener('change', function(event) {  // Get the file selected
 
     }); // end of splitting lines off the string blob
 
-    let arrayTotal = lineRec.length
+// This displays the contents of the entire array
+    let arrayTotal = lineRecord.length
     for (let k = 0; k < arrayTotal; k++) { 
-       console.log(`Array ${k} : ${lineRec[k]}`);
+       console.log(`Array ${k} : ${lineRecord[k]}`);
        }
     
 
     }       // End of (reader: onload) --loading the text fIle into one string variable 
 
   
-   // Read the file as text
+   // Read the file as text  (corresponding to something way up there)
       reader.readAsText(file);
       
 
@@ -131,5 +128,7 @@ fileInput.addEventListener('change', function(event) {  // Get the file selected
 
   }              // and this is the end of the catchall in case you cancel your file choice 
 
-}); // End of the addeventlistener that selects the text file - Line 62
+}); // End of the addeventlistener that selects the text file
 
+
+//----------------- THAT'S ALL, FOLKS! ---------------------------- abbadeea abbadeea abbadeea abbadeea 

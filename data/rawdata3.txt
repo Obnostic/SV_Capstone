@@ -1,0 +1,887 @@
+2025/01/17 00:12:53
+
+Device Name: 4848-Everybody Loves Raymond Law
+Device Model: MX-M2651
+
+Serial Number: 9501427000
+Machine Code: 
+
+Current Device Counter Information: 
+
+Black & White Copy Count = 108131
+
+Black & White Print Count = 162269
+
+Black & White Total Print Count = 270422 Color Total Print Count = 0
+
+Black & White Scanner Count = 47706
+Full Color Scanner Count = 677
+
+
+Black & White Document Filing Print Count = 0
+
+I-Fax Receive Count = 0
+Fax Receive Line1 = 0
+
+Black & White Other Print Count = 22
+
+I-Fax Send Count = 0
+Fax Send Line1 = 0
+
+Black & White Scan to HDD Count = 0
+Full Color Scan to HDD Count = 0
+
+
+Inserted Toner Number (Bk) = 8
+
+
+Toner NN End (Bk) = 0
+
+
+Toner End (Bk) = 7
+
+
+Toner Residual (Bk) = 40%
+-----
+2025/01/17 13:04:33
+
+Device Name: Ring Around The Garden
+Device Model: MX-3071
+
+Serial Number: 9303200Y00
+Machine Code: 
+
+Current Device Counter Information: 
+
+Black & White Copy Count = 25657
+Two Color Copy Count = 0
+Single Color Copy Count = 0
+Full Color Copy Count = 3390
+
+Black & White Print Count = 50349
+Full Color Print Count = 60861
+
+Black & White Total Print Count = 76044
+Two Color Total Print Count = 0
+Single Color Total Print Count = 0
+Color Total Print Count = 64274
+
+Black & White Scanner Count = 1
+Two Color Scanner Count = 0
+Single Color Scanner Count = 0
+Full Color Scanner Count = 0
+
+
+Black & White Document Filing Print Count = 0 Two Color Document Filing Print Count = 0 Single Color Document Filing Count = 0 Full Color Document Filing Print Count = 0
+
+I-Fax Receive Count = 0
+Fax Receive Line1 = 0
+Fax Receive Line2 = 0
+Fax Receive Line3 = 0
+
+Black & White Other Print Count = 38
+Color Other Print Count = 23
+
+I-Fax Send Count = 0
+Fax Send Line1 = 0
+Fax Send Line2 = 0
+Fax Send Line3 = 0
+
+Black & White Scan to HDD Count = 0
+Two Color Scan to HDD Count = 0
+Single Color Scan to HDD Count = 0
+Full Color Scan to HDD Count = 0
+
+
+Inserted Toner Number (Bk) = 4
+Inserted Toner Number (C) = 3
+Inserted Toner Number (M) = 1
+Inserted Toner Number (Y) = 2
+
+
+Toner NN End (Bk) = 0
+Toner NN End (C) = 0
+Toner NN End (M) = 0
+Toner NN End (Y) = 0
+
+
+Toner End (Bk) = 3
+Toner End (C) = 1
+Toner End (M) = 0
+Toner End (Y) = 1
+
+
+Toner Residual (Bk) = 25%
+Toner Residual (C) = 91%
+Toner Residual (M) = 5%
+Toner Residual (Y) = 97%
+-----
+2025/01/18 00:02:51
+
+Device Name: 8149-Johnny REB Guns'N'Bait
+Device Model: MX-4070N
+
+Serial Number: 6506224000
+Machine Code: 
+
+Current Device Counter Information: 
+
+Black & White Copy Count = 21458
+Two Color Copy Count = 0
+Single Color Copy Count = 0
+Full Color Copy Count = 5780
+
+Black & White Print Count = 448832
+Full Color Print Count = 243410
+
+Black & White Total Print Count = 471083 Two Color Total Print Count = 0 Single Color Total Print Count = 0 Color Total Print Count = 249285
+
+Black & White Scanner Count = 55622
+Two Color Scanner Count = 0
+Single Color Scanner Count = 0
+Full Color Scanner Count = 37781
+
+
+Black & White Document Filing Print Count = 7 Two Color Document Filing Print Count = 0 Single Color Document Filing Count = 0 Full Color Document Filing Print Count = 17
+
+I-Fax Receive Count = 0
+Fax Receive Line1 = 322
+Fax Receive Line2 = 0
+Fax Receive Line3 = 0
+
+Black & White Other Print Count = 464
+Color Other Print Count = 78
+
+I-Fax Send Count = 0
+Fax Send Line1 = 132
+Fax Send Line2 = 0
+Fax Send Line3 = 0
+
+Black & White Scan to HDD Count = 40
+Two Color Scan to HDD Count = 0
+Single Color Scan to HDD Count = 0
+Full Color Scan to HDD Count = 10
+
+
+Inserted Toner Number (Bk) = 20
+Inserted Toner Number (C) = 6
+Inserted Toner Number (M) = 6
+Inserted Toner Number (Y) = 11
+
+
+Toner NN End (Bk) = 0
+Toner NN End (C) = 0
+Toner NN End (M) = 0
+Toner NN End (Y) = 0
+
+
+Toner End (Bk) = 19
+Toner End (C) = 5
+Toner End (M) = 5
+Toner End (Y) = 7
+
+
+Toner Residual (Bk) = 62%
+Toner Residual (C) = 41%
+Toner Residual (M) = 87%
+Toner Residual (Y) = 98%
+-----
+Device Name: 4810-Beefalo Trash.Bottling Up Device Model: MX-5070V
+
+Serial Number: 9513656100
+Machine Code: 
+
+Current Device Counter Information: 
+
+Black & White Copy Count = 450046
+Two Color Copy Count = 0
+Single Color Copy Count = 0
+Full Color Copy Count = 291544
+
+Black & White Print Count = 66428
+Full Color Print Count = 327647
+
+Black & White Total Print Count = 516898 Two Color Total Print Count = 0 Single Color Total Print Count = 0 Color Total Print Count = 621259
+
+Black & White Scanner Count = 10306
+Two Color Scanner Count = 0
+Single Color Scanner Count = 0
+Full Color Scanner Count = 5761
+
+
+Black & White Document Filing Print Count = 0 Two Color Document Filing Print Count = 0 Single Color Document Filing Count = 0 Full Color Document Filing Print Count = 0
+
+I-Fax Receive Count = 0
+Fax Receive Line1 = 0
+Fax Receive Line2 = 0
+Fax Receive Line3 = 0
+
+Black & White Other Print Count = 424
+Color Other Print Count = 2068
+
+I-Fax Send Count = 0
+Fax Send Line1 = 0
+Fax Send Line2 = 0
+Fax Send Line3 = 0
+
+Black & White Scan to HDD Count = 0
+Two Color Scan to HDD Count = 0
+Single Color Scan to HDD Count = 0
+Full Color Scan to HDD Count = 0
+
+
+Inserted Toner Number (Bk) = 33
+Inserted Toner Number (C) = 22
+Inserted Toner Number (M) = 30
+Inserted Toner Number (Y) = 25
+
+
+Toner NN End (Bk) = 1
+Toner NN End (C) = 0
+Toner NN End (M) = 3
+Toner NN End (Y) = 0
+
+
+Toner End (Bk) = 31
+Toner End (C) = 22
+Toner End (M) = 25
+Toner End (Y) = 23
+
+
+Toner Residual (Bk) = 88%
+Toner Residual (C) = 0%
+Toner Residual (M) = 43%
+Toner Residual (Y) = 72%
+-----
+2025/01/18 00:01:14
+
+Device Name: 4785-Mongrel Back 2 Avoided Living Center  Device Model: BP-70M36
+
+Serial Number: 4303662600
+Machine Code:
+
+Current Device Counter Information:
+
+Black & White Copy Count = 23553
+
+Black & White Print Count = 20560
+
+Black & White Total Print Count = 44754
+Color Total Print Count = 0
+
+Black & White Scanner Count = 5151
+Full Color Scanner Count = 35
+
+
+Black & White Document Filing Print Count = 0
+
+I-Fax Receive Count = 0
+Fax Receive Line1 = 507
+
+Black & White Other Print Count = 134
+
+I-Fax Send Count = 0
+Fax Send Line1 = 779
+
+Black & White Scan to Local Drive Count = 0 Full Color Scan to Local Drive Count = 0
+
+
+Inserted Toner Number (Bk) = 1
+
+
+Toner NN End (Bk) = 1
+
+
+Toner End (Bk) = 0
+
+
+Toner Residual (Bk) = 1%
+-----
+2025/01/18 00:13:42
+
+Device Name: 4783-Property Devaluator
+Device Model: BP-70C45
+
+Serial Number: 4303082400
+Machine Code: 
+
+Current Device Counter Information: 
+
+Black & White Copy Count = 651
+Two Color Copy Count = 0
+Single Color Copy Count = 0
+Full Color Copy Count = 123
+
+Black & White Print Count = 4755
+Full Color Print Count = 5068
+
+Black & White Total Print Count = 5409
+Two Color Total Print Count = 0
+Single Color Total Print Count = 0
+Color Total Print Count = 5198
+
+Black & White Scanner Count = 1083
+Two Color Scanner Count = 0
+Single Color Scanner Count = 0
+Full Color Scanner Count = 67
+
+
+Black & White Document Filing Print Count = 0 Two Color Document Filing Print Count = 0 Single Color Document Filing Count = 0 Full Color Document Filing Print Count = 0
+
+I-Fax Receive Count = 0
+Fax Receive Line1 = 0
+
+Black & White Other Print Count = 3
+Color Other Print Count = 7
+
+I-Fax Send Count = 0
+Fax Send Line1 = 0
+
+Black & White Scan to Local Drive Count = 0 Two Color Scan to Local Drive Count = 0 Single Color Scan to Local Drive Count = 0 Full Color Scan to Local Drive Count = 0
+
+
+Inserted Toner Number (Bk) = 1
+Inserted Toner Number (C) = 1
+Inserted Toner Number (M) = 1
+Inserted Toner Number (Y) = 1
+
+
+Toner NN End (Bk) = 0
+Toner NN End (C) = 0
+Toner NN End (M) = 0
+Toner NN End (Y) = 0
+
+
+Toner End (Bk) = 0
+Toner End (C) = 0
+Toner End (M) = 0
+Toner End (Y) = 0
+
+
+Toner Residual (Bk) = 51%
+Toner Residual (C) = 76%
+Toner Residual (M) = 73%
+Toner Residual (Y) = 70%
+-----
+2025/01/18 00:03:38
+
+Device Name: 8182-Recover This.Nursing Device Model: MX-M4070
+
+Serial Number: 8501048300
+Machine Code:
+
+Current Device Counter Information:
+
+Black & White Copy Count = 138453
+
+Black & White Print Count = 123936
+
+Black & White Total Print Count = 281688 Color Total Print Count = 0
+
+Black & White Scanner Count = 95735
+Full Color Scanner Count = 37126
+
+
+Black & White Document Filing Print Count = 2728
+
+I-Fax Receive Count = 0
+Fax Receive Line1 = 6722
+Fax Receive Line2 = 0
+Fax Receive Line3 = 0
+
+Black & White Other Print Count = 9849
+
+I-Fax Send Count = 0
+Fax Send Line1 = 37213
+Fax Send Line2 = 0
+Fax Send Line3 = 0
+
+Black & White Scan to HDD Count = 75
+Full Color Scan to HDD Count = 0
+
+
+Inserted Toner Number (Bk) = 7
+
+
+Toner NN End (Bk) = 2
+
+
+Toner End (Bk) = 3
+
+
+Toner Residual (Bk) = 63%
+----
+2025/01/18 00:07:33
+
+Device Name: 4777 - Guzzling Polymers
+Device Model: BP-70C31
+
+Serial Number: 3301101X00
+Machine Code: 
+
+Current Device Counter Information: 
+
+Black & White Copy Count = 3610
+Two Color Copy Count = 0
+Single Color Copy Count = 0
+Full Color Copy Count = 1099
+
+Black & White Print Count = 8383
+Full Color Print Count = 31576
+
+Black & White Total Print Count = 12024
+Two Color Total Print Count = 0
+Single Color Total Print Count = 0
+Color Total Print Count = 32679
+
+Black & White Scanner Count = 10359
+Two Color Scanner Count = 0
+Single Color Scanner Count = 0
+Full Color Scanner Count = 2655
+
+
+Black & White Document Filing Print Count = 0 Two Color Document Filing Print Count = 0 Single Color Document Filing Count = 0 Full Color Document Filing Print Count = 0
+
+I-Fax Receive Count = 0
+Fax Receive Line1 = 0
+
+Black & White Other Print Count = 31
+Color Other Print Count = 4
+
+I-Fax Send Count = 0
+Fax Send Line1 = 0
+
+Black & White Scan to Local Drive Count = 2 Two Color Scan to Local Drive Count = 0 Single Color Scan to Local Drive Count = 0 Full Color Scan to Local Drive Count = 0
+
+
+Inserted Toner Number (Bk) = 3
+Inserted Toner Number (C) = 2
+Inserted Toner Number (M) = 2
+Inserted Toner Number (Y) = 2
+
+
+Toner NN End (Bk) = 0
+Toner NN End (C) = 0
+Toner NN End (M) = 0
+Toner NN End (Y) = 0
+
+
+Toner End (Bk) = 2
+Toner End (C) = 1
+Toner End (M) = 1
+Toner End (Y) = 1
+
+
+Toner Residual (Bk) = 98%
+Toner Residual (C) = 49%
+Toner Residual (M) = 87%
+Toner Residual (Y) = 17%
+-----
+2025/01/18 00:04:55
+
+Device Name: 8179-Too Dark Park Ofc
+Device Model: MX-2630N
+
+Serial Number: 8502823400
+Machine Code: 
+
+Current Device Counter Information: 
+
+Black & White Copy Count = 11179
+Two Color Copy Count = 0
+Single Color Copy Count = 0
+Full Color Copy Count = 4042
+
+Black & White Print Count = 39064
+Full Color Print Count = 99597
+
+Black & White Total Print Count = 50300
+Two Color Total Print Count = 0
+Single Color Total Print Count = 0
+Color Total Print Count = 103992
+
+Black & White Scanner Count = 7269
+Two Color Scanner Count = 0
+Single Color Scanner Count = 0
+Full Color Scanner Count = 4288
+
+
+Black & White Document Filing Print Count = 0 Two Color Document Filing Print Count = 0 Single Color Document Filing Count = 0 Full Color Document Filing Print Count = 0
+
+I-Fax Receive Count = 0
+Fax Receive Line1 = 0
+Fax Receive Line2 = 0
+Fax Receive Line3 = 0
+
+Black & White Other Print Count = 57
+Color Other Print Count = 353
+
+I-Fax Send Count = 0
+Fax Send Line1 = 0
+Fax Send Line2 = 0
+Fax Send Line3 = 0
+
+Black & White Scan to HDD Count = 0
+Two Color Scan to HDD Count = 0
+Single Color Scan to HDD Count = 0
+Full Color Scan to HDD Count = 0
+-----
+2025/01/18 00:05:52
+
+Device Name: 4758-Jacked Up Ford
+Device Model: BP-50M26
+
+Serial Number: 2500295000
+Machine Code: 
+
+Current Device Counter Information: 
+
+Black & White Copy Count = 61642
+
+Black & White Print Count = 21612
+
+Black & White Total Print Count = 84122
+Color Total Print Count = 0
+
+Black & White Scanner Count = 14284
+Full Color Scanner Count = 3419
+
+
+Black & White Document Filing Print Count = 0
+
+I-Fax Receive Count = 0
+Fax Receive Line1 = 440
+
+Black & White Other Print Count = 428
+
+I-Fax Send Count = 0
+Fax Send Line1 = 1103
+
+Black & White Scan to Local Drive Count = 1 Full Color Scan to Local Drive Count = 0
+
+
+Inserted Toner Number (Bk) = 3
+
+
+Toner NN End (Bk) = 1
+
+
+Toner End (Bk) = 1
+
+
+Toner Residual (Bk) = 47%
+
+
+Inserted Toner Number (Bk) = 5
+Inserted Toner Number (C) = 6
+Inserted Toner Number (M) = 4
+Inserted Toner Number (Y) = 6
+
+
+Toner NN End (Bk) = 0
+Toner NN End (C) = 0
+Toner NN End (M) = 0
+Toner NN End (Y) = 0
+
+
+Toner End (Bk) = 4
+Toner End (C) = 5
+Toner End (M) = 3
+Toner End (Y) = 4
+
+
+Toner Residual (Bk) = 80%
+Toner Residual (C) = 63%
+Toner Residual (M) = 50%
+Toner Residual (Y) = 68%
+-----
+2025/01/18 00:09:52
+
+Device Name: 4893 - McNerd & Footbash
+Device Model: MX-M5071
+
+Serial Number: 1501766900
+Machine Code: 
+
+Current Device Counter Information: 
+
+Black & White Copy Count = 41858
+
+Black & White Print Count = 329089
+
+Black & White Total Print Count = 370947 Color Total Print Count = 0
+
+Black & White Scanner Count = 417
+Full Color Scanner Count = 630
+
+
+Black & White Document Filing Print Count = 0
+
+I-Fax Receive Count = 0
+Fax Receive Line1 = 0
+
+Black & White Other Print Count = 0
+
+I-Fax Send Count = 0
+Fax Send Line1 = 0
+
+Black & White Scan to HDD Count = 0
+Full Color Scan to HDD Count = 0
+
+
+Inserted Toner Number (Bk) = 8
+
+
+Toner NN End (Bk) = 0
+
+
+Toner End (Bk) = 7
+
+
+Toner Residual (Bk) = 91%
+-----
+2025/01/18 00:09:07
+
+Device Name: 4755-Sneezelee Hay
+Device Model: BP-70C31
+
+Serial Number: 2512817700
+Machine Code: 
+
+Current Device Counter Information: 
+
+Black & White Copy Count = 779
+Two Color Copy Count = 0
+Single Color Copy Count = 0
+Full Color Copy Count = 467
+
+Black & White Print Count = 7683
+Full Color Print Count = 13648
+
+Black & White Total Print Count = 8463
+Two Color Total Print Count = 0
+Single Color Total Print Count = 0
+Color Total Print Count = 14116
+
+Black & White Scanner Count = 1599
+Two Color Scanner Count = 0
+Single Color Scanner Count = 0
+Full Color Scanner Count = 5892
+
+
+Black & White Document Filing Print Count = 0 Two Color Document Filing Print Count = 0 Single Color Document Filing Count = 0 Full Color Document Filing Print Count = 0
+
+I-Fax Receive Count = 0
+Fax Receive Line1 = 0
+
+Black & White Other Print Count = 1
+Color Other Print Count = 1
+
+I-Fax Send Count = 0
+Fax Send Line1 = 0
+
+Black & White Scan to Local Drive Count = 0 Two Color Scan to Local Drive Count = 0 Single Color Scan to Local Drive Count = 0 Full Color Scan to Local Drive Count = 0
+
+
+Inserted Toner Number (Bk) = 2
+Inserted Toner Number (C) = 1
+Inserted Toner Number (M) = 1
+Inserted Toner Number (Y) = 1
+
+
+Toner NN End (Bk) = 0
+Toner NN End (C) = 0
+Toner NN End (M) = 0
+Toner NN End (Y) = 0
+
+
+Toner End (Bk) = 1
+Toner End (C) = 0
+Toner End (M) = 0
+Toner End (Y) = 0
+
+
+Toner Residual (Bk) = 86%
+Toner Residual (C) = 31%
+Toner Residual (M) = 45%
+Toner Residual (Y) = 43%
+------
+2025/01/18 00:08:58
+
+Device Name: 4767-Crawfish Mangle & Butte (Clotts Copy Sys) Device Model: BP-50C26
+
+Serial Number: 3505539300
+Machine Code: 
+
+Current Device Counter Information: 
+
+Black & White Copy Count = 226
+Two Color Copy Count = 0
+Single Color Copy Count = 0
+Full Color Copy Count = 37
+
+Black & White Print Count = 954
+Full Color Print Count = 4452
+
+Black & White Total Print Count = 1183
+Two Color Total Print Count = 0
+Single Color Total Print Count = 0
+Color Total Print Count = 4491
+
+Black & White Scanner Count = 21
+Two Color Scanner Count = 0
+Single Color Scanner Count = 0
+Full Color Scanner Count = 137
+
+
+Black & White Document Filing Print Count = 0 Two Color Document Filing Print Count = 0 Single Color Document Filing Count = 0 Full Color Document Filing Print Count = 0
+
+I-Fax Receive Count = 0
+Fax Receive Line1 = 0
+
+Black & White Other Print Count = 3
+Color Other Print Count = 2
+
+I-Fax Send Count = 0
+Fax Send Line1 = 0
+
+Black & White Scan to Local Drive Count = 0 Two Color Scan to Local Drive Count = 0 Single Color Scan to Local Drive Count = 0 Full Color Scan to Local Drive Count = 0
+
+
+Inserted Toner Number (Bk) = 1
+Inserted Toner Number (C) = 1
+Inserted Toner Number (M) = 1
+Inserted Toner Number (Y) = 1
+
+
+Toner NN End (Bk) = 0
+Toner NN End (C) = 0
+Toner NN End (M) = 0
+Toner NN End (Y) = 0
+
+
+Toner End (Bk) = 0
+Toner End (C) = 0
+Toner End (M) = 0
+Toner End (Y) = 0
+
+
+Toner Residual (Bk) = 76%
+Toner Residual (C) = 81%
+Toner Residual (M) = 89%
+Toner Residual (Y) = 86%
+-----
+2025/01/18 00:13:06
+
+Device Name: 8189-Like A Sturgeon
+Device Model: MX-M4050
+
+Serial Number: 8502860500
+Machine Code: 
+
+Current Device Counter Information: 
+
+Black & White Copy Count = 117610
+
+Black & White Print Count = 195639
+
+Black & White Total Print Count = 337580 Color Total Print Count = 0
+
+Black & White Scanner Count = 24770
+Full Color Scanner Count = 744
+
+
+Black & White Document Filing Print Count = 0
+
+I-Fax Receive Count = 0
+Fax Receive Line1 = 23779
+
+Black & White Other Print Count = 552
+
+I-Fax Send Count = 0
+Fax Send Line1 = 4256
+
+Black & White Scan to HDD Count = 0
+Full Color Scan to HDD Count = 0
+
+
+Inserted Toner Number (Bk) = 11
+
+
+Toner NN End (Bk) = 0
+
+
+Toner End (Bk) = 9
+
+
+Toner Residual (Bk) = 97%
+-----
+2025/01/18 00:12:50
+
+Device Name: 4858-Crashing Bores
+Device Model: MX-C304W
+
+Serial Number: 0301960300
+Machine Code: 
+
+Current Device Counter Information: 
+
+Black & White Copy Count = 3767
+Two Color Copy Count = 0
+Single Color Copy Count = 0
+Full Color Copy Count = 2391
+
+Black & White Print Count = 16064
+Full Color Print Count = 35845
+
+Black & White Total Print Count = 19848
+Two Color Total Print Count = 0
+Single Color Total Print Count = 0
+Color Total Print Count = 38239
+
+Black & White Scanner Count = 7759
+Two Color Scanner Count = 0
+Single Color Scanner Count = 0
+Full Color Scanner Count = 2077
+
+
+Black & White Document Filing Print Count = 0 Two Color Document Filing Print Count = 0 Single Color Document Filing Count = 0 Full Color Document Filing Print Count = 0
+
+I-Fax Receive Count = 0
+Fax Receive Line1 = 0
+
+Black & White Other Print Count = 17
+Color Other Print Count = 3
+
+I-Fax Send Count = 0
+Fax Send Line1 = 0
+
+Black & White Scan to HDD Count = 0
+Two Color Scan to HDD Count = 0
+Single Color Scan to HDD Count = 0
+Full Color Scan to HDD Count = 0
+
+
+Inserted Toner Number (Bk) = 8
+Inserted Toner Number (C) = 3
+Inserted Toner Number (M) = 3
+Inserted Toner Number (Y) = 5
+
+
+Toner NN End (Bk) = 0
+Toner NN End (C) = 0
+Toner NN End (M) = 0
+Toner NN End (Y) = 0
+
+
+Toner End (Bk) = 7
+Toner End (C) = 2
+Toner End (M) = 2
+Toner End (Y) = 3
+
+
+Toner Residual (Bk) = 11%
+Toner Residual (C) = 13%
+Toner Residual (M) = 53%
+Toner Residual (Y) = 85%
+-----
